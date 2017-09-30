@@ -17,34 +17,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kZu-LQ-Ekj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.050000000000000003" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oF6-9r-06v">
+                                <rect key="frame" x="39" y="38" width="297" height="31"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="0Jr-VY-huN"/>
+                                </connections>
+                            </slider>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EBc-zq-I0e">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KFT-5S-UMX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="LBe-HJ-9GB">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KFT-5S-UMX" id="dgg-UP-hj3">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LBe-HJ-9GB" id="1ey-x2-ttA">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0dd-5D-jXe"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="L5k-P1-uUw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kZu-LQ-Ekj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7Xe-M7-OHR"/>
-                            <constraint firstItem="kZu-LQ-Ekj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VSz-vV-LpH"/>
-                            <constraint firstItem="kZu-LQ-Ekj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dTL-WM-xt5"/>
-                            <constraint firstItem="kZu-LQ-Ekj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="iaC-KB-zPC"/>
+                            <constraint firstItem="EBc-zq-I0e" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="25q-xd-c1B"/>
+                            <constraint firstItem="EBc-zq-I0e" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3vh-kG-bO9"/>
+                            <constraint firstItem="EBc-zq-I0e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BOj-V9-hnp"/>
+                            <constraint firstItem="oF6-9r-06v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="JEN-0L-iHb"/>
+                            <constraint firstItem="EBc-zq-I0e" firstAttribute="top" secondItem="oF6-9r-06v" secondAttribute="bottom" constant="8" id="ZXv-7q-2jY"/>
+                            <constraint firstItem="oF6-9r-06v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="gTG-Ln-dUx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oF6-9r-06v" secondAttribute="trailing" constant="41" id="qsN-Ii-L16"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="slider" destination="oF6-9r-06v" id="l94-le-9WC"/>
+                        <outlet property="tableView" destination="EBc-zq-I0e" id="eb4-9a-9cA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.200000000000003" y="131.78410794602701"/>
+            <point key="canvasLocation" x="-90.400000000000006" y="128.18590704647679"/>
         </scene>
     </scenes>
 </document>
